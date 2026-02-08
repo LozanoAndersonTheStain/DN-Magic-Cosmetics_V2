@@ -24,6 +24,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { CartSlideOver } from "./cart-slide-over";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
@@ -274,6 +275,9 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Cart Slide Over */}
+      <CartSlideOver />
 
       {/* Spacer para evitar que el contenido quede debajo del navbar fijo */}
       <div className="h-16 md:h-20" />

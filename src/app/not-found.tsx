@@ -18,7 +18,7 @@ export default function NotFound() {
   }, [pathname]);
 
   return (
-    <div className="flex min-h-[80vh] items-center justify-center bg-gradient-to-b from-rose-light via-background to-background px-4">
+    <div className="flex min-h-[90vh] items-center justify-center bg-gradient-to-b from-rose-light via-background to-background px-4">
       <div className="text-center max-w-lg">
         {/* Animate 404 number */}
         <motion.div

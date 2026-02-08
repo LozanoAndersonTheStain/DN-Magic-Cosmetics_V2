@@ -27,7 +27,7 @@ export default function Home() {
   const newProducts = sampleProducts.filter((p) => p.isNew).slice(0, 4);
 
   return (
-    <main >
+    <main>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center gradient-hero overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
@@ -95,6 +95,7 @@ export default function Home() {
                   alt="Colección de cosméticos"
                   width={800}
                   height={800}
+                  priority
                   className="relative z-10 w-full h-full object-cover rounded-3xl shadow-elevated"
                 />
                 <motion.div

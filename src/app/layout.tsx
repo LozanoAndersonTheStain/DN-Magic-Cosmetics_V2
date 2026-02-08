@@ -4,6 +4,7 @@ import { CartProvider } from "@/contexts/cart-context";
 import { Navbar } from "@/components/navbar";
 import { ClientLayout } from "@/components/client-layout";
 import "./globals.css";
+import { Footer } from "@/components/footer";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-display",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <ClientLayout>
             <Navbar />
             {children}
+            <Footer />
           </ClientLayout>
         </CartProvider>
       </body>

@@ -20,15 +20,15 @@ export function Footer() {
               />
             </div>
             <p className="text-background/70 text-sm leading-relaxed">
-              Descubre la magia de la belleza con productos de alta calidad
-              para el cuidado de tu piel y cabello.
+              Descubre la magia de la belleza con productos de alta calidad para
+              el cuidado de tu piel y cabello.
             </p>
             <div className="flex gap-4 pt-2">
               <a
                 href="https://instagram.com/dnmagiccosmetics"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-background/10 rounded-full hover:bg-background/20 transition-colors"
+                className="p-3 bg-background/10 rounded-full hover:bg-background/20 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -37,21 +37,26 @@ export function Footer() {
                 href="https://www.tiktok.com/@magic_cosmetics_d.n"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-background/10 rounded-full hover:bg-background/20 transition-colors"
+                className="p-3 bg-background/10 rounded-full hover:bg-background/20 transition-colors"
                 aria-label="TikTok"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <path d="M9.75 3C8.23122 3 7 4.23122 7 5.75V12.25C7 13.7688 8.23122 15 9.75 15H12V9H14.25C15.7688 9 17 7.76878 17 6.25V4H15V5.75C15 6.16421 14.6642 6.5 14.25 6.5H12V3H9.75Z" />
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" />
                 </svg>
               </a>
-               <a
+              <a
                 href="mailto:magicmakeup007@gmail.com"
-                className="p-2 bg-background/10 rounded-full hover:bg-background/20 transition-colors"
+                className="p-3 bg-background/10 rounded-full hover:bg-background/20 transition-colors"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
@@ -191,6 +196,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-     </footer>
+    </footer>
   );
 }

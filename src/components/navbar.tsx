@@ -28,8 +28,8 @@ import { CartSlideOver } from "./cart-slide-over";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
-  { href: "/productos", label: "Productos" },
-  { href: "/promociones", label: "Promociones" },
+  { href: "/products", label: "Productos" },
+  { href: "/promotions", label: "Promociones" },
 ];
 
 export function Navbar() {

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Heart, ShoppingBag, Star } from "lucide-react";
 import { Product, formatPrice } from "@/data/products";
 import { useCart } from "@/contexts/cart-context";
+import { useFavorites } from "@/contexts/favorites-context";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
@@ -15,11 +16,19 @@ interface ProductCardProps {
 
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const { addItem } = useCart();
+  const { toggleFavorite, isFavorite } = useFavorites();
 
   const handleQuickAdd = (e: React.MouseEvent) => {
     e.preventDefault();
     addItem(product, 1, product.sizes[0]);
   };
+
+  const handleToggleFavorite = (e: React.MouseEvent) => {
+    e.preventDefault();
+    toggleFavorite(product);
+  };
+
+  const isProductFavorite = isFavorite(product.id);
 
   return (
     <motion.article
@@ -67,10 +76,21 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="p-2 bg-background/90 backdrop-blur-sm rounded-full shadow-soft hover:bg-background transition-colors"
-              aria-label="Agregar a favoritos"
+              onClick={handleToggleFavorite}
+              className={`p-2 backdrop-blur-sm rounded-full shadow-soft transition-colors ${
+                isProductFavorite
+                  ? "bg-primary text-primary-foreground"
+                  : "bg-background/90 hover:bg-background"
+              }`}
+              aria-label={
+                isProductFavorite
+                  ? "Quitar de favoritos"
+                  : "Agregar a favoritos"
+              }
             >
-              <Heart className="w-4 h-4" />
+              <Heart
+                className={`w-4 h-4 ${isProductFavorite ? "fill-current" : ""}`}
+              />
             </motion.button>
           </div>
 

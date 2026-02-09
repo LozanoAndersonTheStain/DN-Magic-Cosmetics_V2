@@ -16,6 +16,7 @@ import {
   Package,
 } from "lucide-react";
 import { useCart } from "@/contexts/cart-context";
+import { useFavorites } from "@/contexts/favorites-context";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -35,6 +36,7 @@ const navLinks = [
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { toggleCart, totalItems } = useCart();
+  const { totalFavorites } = useFavorites();
   const pathname = usePathname();
 
   // TODO: Implementar autenticación
@@ -112,14 +114,28 @@ export function Navbar() {
               >
                 <Search className="w-5 h-5" />
               </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="hidden md:flex"
-                aria-label="Favoritos"
-              >
-                <Heart className="w-5 h-5" />
-              </Button>
+              <Link href="/favorites">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hidden md:flex relative"
+                  aria-label="Favoritos"
+                >
+                  <Heart className="w-5 h-5" />
+                  <AnimatePresence>
+                    {totalFavorites > 0 && (
+                      <motion.span
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        exit={{ scale: 0 }}
+                        className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-primary-foreground text-xs font-medium rounded-full flex items-center justify-center"
+                      >
+                        {totalFavorites}
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </Button>
+              </Link>
               <Button
                 variant="ghost"
                 size="icon"
@@ -177,9 +193,11 @@ export function Navbar() {
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (
-                <Button variant="ghost" size="sm" asChild>
-                  <Link href="/auth">Ingresar</Link>
-                </Button>
+                <Link href="/auth">
+                  <Button variant="ghost" size="sm">
+                    Ingresar
+                  </Button>
+                </Link>
               )}
             </div>
           </div>
@@ -251,9 +269,8 @@ export function Navbar() {
                     <Link
                       href="/auth"
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="flex items-center gap-2 py-2 text-primary font-medium hover:text-primary/80 transition-colors"
                     >
-                      <User className="w-4 h-4" />
+                      <User className="w-4 h-4 mr-2" />
                       Ingresar
                     </Link>
                   )}
@@ -265,10 +282,12 @@ export function Navbar() {
                     <Search className="w-4 h-4 mr-2" />
                     Buscar
                   </Button>
-                  <Button variant="outline" className="flex-1" size="sm">
-                    <Heart className="w-4 h-4 mr-2" />
-                    Favoritos
-                  </Button>
+                  <Link href="/favorites" className="flex-1">
+                    <Button variant="outline" className="w-full" size="sm">
+                      <Heart className="w-4 h-4 mr-2" />
+                      Favoritos ({totalFavorites})
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </nav>

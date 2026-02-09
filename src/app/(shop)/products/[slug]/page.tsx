@@ -31,10 +31,10 @@ export default function ProductDetail() {
   const product = sampleProducts.find((p) => p.slug === slug);
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState<string | undefined>(
-    product?.sizes[0],
+    product?.sizes[0]
   );
   const [selectedColor, setSelectedColor] = useState<string | undefined>(
-    product?.colorVariants?.[0]?.color,
+    product?.colorVariants?.[0]?.color
   );
   const [quantity, setQuantity] = useState(1);
 
@@ -42,7 +42,9 @@ export default function ProductDetail() {
     return (
       <main className="pt-20 pb-20 min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="font-display text-2xl mb-4">Producto no encontrado</h1>
+          <h1 className="font-display text-2xl mb-4">
+            Producto no encontrado
+          </h1>
           <Button asChild>
             <Link href="/products">Volver a productos</Link>
           </Button>
@@ -60,14 +62,10 @@ export default function ProductDetail() {
     .slice(0, 4);
 
   return (
-    <main className="pt-20 md:pt-24 pb-20">
+    <main className="pt-10 md:pt-15 pb-20">
       <div className="container mx-auto px-4">
         {/* Breadcrumb */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="mb-8"
-        >
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-8">
           <Link
             href="/products"
             className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors"
@@ -161,7 +159,7 @@ export default function ProductDetail() {
                     <Badge variant="destructive">
                       -
                       {Math.round(
-                        (1 - product.price / product.originalPrice) * 100,
+                        (1 - product.price / product.originalPrice) * 100
                       )}
                       %
                     </Badge>
@@ -273,11 +271,7 @@ export default function ProductDetail() {
                 <ShoppingBag className="w-5 h-5 mr-2" />
                 Agregar al Carrito
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                aria-label="Agregar a favoritos"
-              >
+              <Button variant="outline" size="lg" aria-label="Agregar a favoritos">
                 <Heart className="w-5 h-5" />
               </Button>
             </div>

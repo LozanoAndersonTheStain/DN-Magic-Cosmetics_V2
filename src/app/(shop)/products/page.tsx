@@ -34,7 +34,7 @@ export default function ProductsPage() {
   };
 
   return (
-    <main className="pt-20 md:pt-24 pb-20 min-h-screen">
+    <main className="pt-10 md:pt-15 pb-20 min-h-screen">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div

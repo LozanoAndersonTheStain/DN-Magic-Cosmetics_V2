@@ -67,13 +67,13 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="group">
-                  <Link href="/productos">
+                  <Link href="/products">
                     Explorar Productos
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="/promociones">Ver Promociones</Link>
+                  <Link href="/promotions">Ver Promociones</Link>
                 </Button>
               </div>
             </motion.div>
@@ -183,7 +183,7 @@ export default function Home() {
                   transition={{ delay: index * 0.05 }}
                 >
                   <Link
-                    href={`/productos?type=${category.value}`}
+                    href={`/products?type=${category.value}`}
                     className="group flex flex-col items-center p-6 gradient-card rounded-2xl border border-border hover:border-primary/30 hover:shadow-soft transition-all"
                   >
                     <span className="text-4xl mb-3">{category.icon}</span>
@@ -215,7 +215,7 @@ export default function Home() {
               </p>
             </div>
             <Button variant="ghost" asChild className="hidden md:flex">
-              <Link href="/productos">
+              <Link href="/products">
                 Ver todos <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
@@ -229,7 +229,7 @@ export default function Home() {
 
           <div className="mt-8 text-center md:hidden">
             <Button asChild>
-              <Link href="/productos">Ver todos los productos</Link>
+              <Link href="/products">Ver todos los productos</Link>
             </Button>
           </div>
         </div>
@@ -253,7 +253,7 @@ export default function Home() {
               </p>
             </div>
             <Button variant="ghost" asChild className="hidden md:flex">
-              <Link href="/productos">
+              <Link href="/products">
                 Ver todos <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
@@ -292,7 +292,7 @@ export default function Home() {
                 tu primera compra
               </p>
               <Button size="lg" variant="secondary" asChild>
-                <Link href="/promociones">Ver Promociones</Link>
+                <Link href="/promotions">Ver Promociones</Link>
               </Button>
             </div>
           </motion.div>

@@ -28,7 +28,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
       transition={{ delay: index * 0.1, duration: 0.4 }}
       className="group relative"
     >
-      <Link href={`/producto/${product.slug}`}>
+      <Link href={`/products/${product.slug}`}>
         <div className="relative aspect-square overflow-hidden rounded-2xl bg-muted mb-4">
           <motion.img
             src={product.images[0]}

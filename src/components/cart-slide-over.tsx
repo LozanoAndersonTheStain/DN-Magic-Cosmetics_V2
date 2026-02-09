@@ -73,7 +73,7 @@ export function CartSlideOver() {
                     Explora nuestra colección y encuentra algo especial
                   </p>
                   <Button onClick={closeCart} asChild>
-                    <Link href="/productos">Ver Productos</Link>
+                    <Link href="/products">Ver Productos</Link>
                   </Button>
                 </div>
               ) : (

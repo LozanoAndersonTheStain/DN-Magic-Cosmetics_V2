@@ -70,7 +70,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/productos"
+                  href="/products"
                   className="text-background/70 hover:text-background transition-colors text-sm"
                 >
                   Todos los Productos
@@ -78,7 +78,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/promociones"
+                  href="/promotions"
                   className="text-background/70 hover:text-background transition-colors text-sm"
                 >
                   Promociones
@@ -86,7 +86,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/productos?type=cuidado-facial"
+                  href="/products?type=cuidado-facial"
                   className="text-background/70 hover:text-background transition-colors text-sm"
                 >
                   Cuidado Facial
@@ -94,7 +94,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/productos?type=cuidado-capilar"
+                  href="/products?type=cuidado-capilar"
                   className="text-background/70 hover:text-background transition-colors text-sm"
                 >
                   Cuidado Capilar
@@ -109,7 +109,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/productos?type=labios"
+                  href="/products?type=labios"
                   className="text-background/70 hover:text-background transition-colors text-sm"
                 >
                   Labios
@@ -117,7 +117,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/productos?type=ojos"
+                  href="/products?type=ojos"
                   className="text-background/70 hover:text-background transition-colors text-sm"
                 >
                   Ojos
@@ -125,7 +125,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/productos?type=unas"
+                  href="/products?type=unas"
                   className="text-background/70 hover:text-background transition-colors text-sm"
                 >
                   Uñas
@@ -133,7 +133,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/productos?type=brochas"
+                  href="/products?type=brochas"
                   className="text-background/70 hover:text-background transition-colors text-sm"
                 >
                   Brochas
